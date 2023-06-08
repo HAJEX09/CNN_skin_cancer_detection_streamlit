@@ -1,0 +1,40 @@
+import numpy as np
+from PIL import Image
+from keras.models import load_model
+
+# Загрузка модели
+model = load_model('mymodel-2.h5')
+
+def preprocess_image(img):
+    img = img.resize((128, 128))
+    x = image.img_to_array(img)
+    x = np.expand_dims(x, axis=0)
+    x = preprocess_input(x)
+    return x
+
+
+def load_image():
+    uploaded_file = st.file_uploader(label='Выберите изображение для распознавания')
+    if uploaded_file is not None:
+        image_data = uploaded_file.getvalue()
+        st.image(image_data)
+        return Image.open(io.BytesIO(image_data))
+    else:
+        return None
+
+
+def print_predictions(preds):
+    classes = decode_predictions(preds, top=2)[0]
+    for cl in classes:
+        st.write(cl[1], cl[2])
+
+
+
+st.title('Новая улучшенная классификации изображений в облаке Streamlit')
+img = load_image()
+result = st.button('Распознать изображение')
+if result:
+    x = preprocess_image(img)
+    preds = model.predict(x)
+    st.write('**Результаты распознавания:**')
+    print_predictions(preds)
