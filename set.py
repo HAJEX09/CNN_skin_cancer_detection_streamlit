@@ -36,12 +36,12 @@ def print_predictions(preds):
 
 def print_predictions2(preds):
     if preds[[0]] < 0.5:
-        st.write('Злокачественная! Обратитесь к доктору!')
+        st.write('Злокачественная! Пожалуйста, обратитесь к доктору!')
     else:
         st.write('Доброкачественная)')
 
 
-st.title('Новая улучшенная классификации изображений в облаке Streamlit')
+st.title('Нейросеть для обнаружения рака кожи ')
 img = load_image()
 result = st.button('Распознать изображение')
 if result:
