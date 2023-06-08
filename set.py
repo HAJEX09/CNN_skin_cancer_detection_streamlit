@@ -34,6 +34,12 @@ def print_predictions(preds):
         st.write(cl[1], cl[2])
 
 
+def print_predictions2(preds):
+    if preds[[0]] < 0.5:
+        print('Злокачественная! Обратитесь к доктору!')
+    else:
+        print('Доброкачественная)')
+
 
 st.title('Новая улучшенная классификации изображений в облаке Streamlit')
 img = load_image()
@@ -42,4 +48,4 @@ if result:
     x = preprocess_image(img)
     preds = model.predict(x)
     st.write('**Результаты распознавания:**')
-    print_predictions(preds)
+    print_predictions2(preds)
