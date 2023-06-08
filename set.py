@@ -36,9 +36,9 @@ def print_predictions(preds):
 
 def print_predictions2(preds):
     if preds[[0]] < 0.5:
-        print('Злокачественная! Обратитесь к доктору!')
+        st.write('Злокачественная! Обратитесь к доктору!')
     else:
-        print('Доброкачественная)')
+        st.write('Доброкачественная)')
 
 
 st.title('Новая улучшенная классификации изображений в облаке Streamlit')
