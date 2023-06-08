@@ -1,6 +1,11 @@
-import numpy as np
+import io
+import streamlit as st
 from PIL import Image
-from keras.models import load_model
+from tensorflow.keras.applications.efficientnet import preprocess_input
+from tensorflow.keras.applications.efficientnet import decode_predictions
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications import EfficientNetB0
+import numpy as np
 
 # Загрузка модели
 model = load_model('mymodel-2.h5')
