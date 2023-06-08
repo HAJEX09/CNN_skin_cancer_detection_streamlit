@@ -29,9 +29,12 @@ def load_image():
 
 
 def print_predictions(preds):
-    classes = decode_predictions(preds, top=2)[0]
-    for cl in classes:
-        st.write(cl[1], cl[2])
+    predictions = model.predict(image)
+    predictions
+        if predictions[[0]] < 0.5:
+            print('Злокачественная! Обратитесь к доктору!')
+        else:
+            print('Доброкачественная)')
 
 
 
