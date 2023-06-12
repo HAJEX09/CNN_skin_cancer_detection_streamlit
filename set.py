@@ -38,12 +38,10 @@ def print_predictions(preds):
 def print_predictions(preds):
     if preds[[0]] < 0.5:
         st.write('Злокачественная! Пожалуйста, обратитесь к доктору!')
-        out = ('I am {:.2%} percent confirmed that this is a Tuberculosis case'.format(
-            preds[0][0]))        
+      
     else:
-        st.write('Доброкачественная---)')
-        st.write('I am {:.2%} percent confirmed that this is a Tuberculosis case'.format(
-            preds[0][0]))
+        st.write('Доброкачественная)')
+
 
 st.title('Нейросеть для обнаружения рака кожи ')
 img = load_image()
