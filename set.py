@@ -27,14 +27,15 @@ def load_image():
     else:
         return None
 
-
+'''
 def print_predictions(preds):
     classes = decode_predictions(preds, top=2)[0]
     for cl in classes:
         st.write(cl[1], cl[2])
+'''
 
 
-def print_predictions2(preds):
+def print_predictions(preds):
     if preds[[0]] < 0.5:
         st.write('Злокачественная! Пожалуйста, обратитесь к доктору!')
     else:
@@ -47,5 +48,7 @@ result = st.button('Распознать изображение')
 if result:
     x = preprocess_image(img)
     preds = model.predict(x)
+    res = float(preds)
     st.write('**Результаты распознавания:**')
-    print_predictions2(preds)
+    print_predictions(preds)
+    st.write(res)
