@@ -54,4 +54,4 @@ if result:
     res = float(preds)
     st.write('**Результаты распознавания:**')
     print_predictions(preds)
-    st.write(res)
+    #st.write(res)
