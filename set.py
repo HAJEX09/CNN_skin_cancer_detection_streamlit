@@ -41,7 +41,7 @@ def print_predictions(preds):
         out = ('I am {:.2%} percent confirmed that this is a Tuberculosis case'.format(
             preds[0][0]))        
     else:
-        st.write('Доброкачественная)')
+        st.write('Доброкачественная---)')
         st.write('I am {:.2%} percent confirmed that this is a Tuberculosis case'.format(
             preds[0][0]))
 
