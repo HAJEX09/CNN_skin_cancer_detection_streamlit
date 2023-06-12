@@ -42,7 +42,7 @@ def print_predictions(preds):
             preds[0][0]))        
     else:
         st.write('Доброкачественная)')
-        out = ('I am {:.2%} percent confirmed that this is a Tuberculosis case'.format(
+        st.write('I am {:.2%} percent confirmed that this is a Tuberculosis case'.format(
             preds[0][0]))
 
 st.title('Нейросеть для обнаружения рака кожи ')
