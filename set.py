@@ -27,12 +27,12 @@ def load_image():
     else:
         return None
 
-'''
+
 def print_predictions(preds):
     classes = decode_predictions(preds, top=2)[0]
     for cl in classes:
         st.write(cl[1], cl[2])
-'''
+
 
 
 def print_predictions(preds):
